@@ -1,4 +1,4 @@
-#include "sys_transform2d.h"
+#include "../game.h"
 #include "../math/math_mat2d.h"
 
 static int QUERY = HAS_TRANSFORM2D;

@@ -2,10 +2,7 @@
 #include <stdio.h>
 
 #include "game.h"
-#include "systems/sys_control_paddle.h"
-#include "systems/sys_draw2d.h"
-#include "systems/sys_framerate.h"
-#include "systems/sys_transform2d.h"
+#include "systems/sys.h"
 
 int create_entity(Game* game)
 {

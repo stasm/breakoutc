@@ -1,6 +1,5 @@
 #include <SDL2/SDL.h>
-#include <stdio.h>
-#include "sys_framerate.h"
+#include "../game.h"
 
 void sys_framerate(Game* game, float delta)
 {

@@ -1,4 +1,4 @@
-#include "sys_control_paddle.h"
+#include "../game.h"
 
 static int QUERY = HAS_TRANSFORM2D | HAS_CONTROL_PADDLE;
 
