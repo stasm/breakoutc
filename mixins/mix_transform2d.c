@@ -1,10 +1,9 @@
 #include <stdbool.h>
-#include "../components/com_index.h"
-#include "../components/com_transform2d.h"
-#include "../math/math_mat2d.h"
 #include "../game.h"
+#include "../components/com_index.h"
+#include "../math/math_mat2d.h"
 
-void create_transform2d(Game* game, int entity) {
+Transform2D* with_transform2d(Game* game, int entity) {
 	Transform2D* transform = (Transform2D*)malloc(sizeof(Transform2D));
 	*transform = (Transform2D){
 		.world = {0},
@@ -19,5 +18,5 @@ void create_transform2d(Game* game, int entity) {
 	mat2d_create(transform->self);
 
 	game->world[entity] |= HAS_TRANSFORM2D;
-	game->transform2d[entity] = transform;
+	return game->transform2d[entity] = transform;
 }

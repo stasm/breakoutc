@@ -4,7 +4,7 @@
 
 static int QUERY = HAS_TRANSFORM2D;
 
-void sys_transform_update(Game* game, int entity)
+void sys_transform2d_update(Game* game, int entity)
 {
 	Transform2D* transform = game->transform2d[entity];
 	if (transform->dirty)
@@ -22,7 +22,7 @@ void sys_transform2d(Game* game, float delta)
 {
 	for (int i = 0; i < MAX_ENTITIES; i++) {
 		if ((game->world[i] & QUERY) == QUERY) {
-			sys_transform_update(game, i);
+			sys_transform2d_update(game, i);
 		}
 	}
 }

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "game.h"
+#include "worlds/wor_main.h"
 
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
@@ -32,6 +33,7 @@ int main(int argc, char* argv[])
 		exit(1);
 	}
 
+	world_main(&game);
 	game_start(&game);
 
 	//Destroy window
