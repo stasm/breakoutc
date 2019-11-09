@@ -1,7 +1,5 @@
 #include "../game.h"
-#include "../mixins/mix_control_paddle.h"
-#include "../mixins/mix_draw2d.h"
-#include "../mixins/mix_transform2d.h"
+#include "../mixins/mix.h"
 
 void world_main(Game* game)
 {
