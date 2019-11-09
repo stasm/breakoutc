@@ -1,7 +1,4 @@
 #include <SDL2/SDL.h>
-
-#include "../game.h"
-#include "../components/com_index.h"
 #include "sys_draw2d.h"
 
 static int QUERY = HAS_TRANSFORM2D | HAS_DRAW2D;

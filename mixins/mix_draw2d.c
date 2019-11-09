@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include "../game.h"
-#include "../components/com_index.h"
 #include "../math/math_mat2d.h"
 
 Draw2D* with_draw2d(Game* game, int entity) {

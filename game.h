@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include <time.h>
 
+#include "components/com_index.h"
 #include "components/com_draw2d.h"
 #include "components/com_transform2d.h"
 

@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include "../game.h"
-#include "../components/com_index.h"
 #include "../math/math_mat2d.h"
 
 Transform2D* with_transform2d(Game* game, int entity) {
