@@ -2,7 +2,7 @@
 #include "../game.h"
 #include "../math/math_mat2d.h"
 
-Transform2D* with_transform2d(Game* game, int entity) {
+Transform2D* mix_transform2d(Game* game, int entity) {
 	Transform2D* transform = (Transform2D*)malloc(sizeof(Transform2D));
 	*transform = (Transform2D){
 		.world = {0},

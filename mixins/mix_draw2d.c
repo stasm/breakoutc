@@ -2,7 +2,7 @@
 #include "../game.h"
 #include "../math/math_mat2d.h"
 
-Draw2D* with_draw2d(Game* game, int entity) {
+Draw2D* mix_draw2d(Game* game, int entity) {
 	Draw2D* draw = (Draw2D*)malloc(sizeof(Draw2D));
 	*draw = (Draw2D){
 		.size = 50,

@@ -1,4 +1,4 @@
 #pragma once
 #include "../game.h"
 
-Transform2D* with_transform2d(Game*, int);
+Transform2D* mix_transform2d(Game*, int);
