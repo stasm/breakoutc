@@ -16,18 +16,21 @@ int main(int argc, char* argv[])
 
 	Game game = (Game){
 		.world = {0},
+		.input_state = {0},
 		.window = NULL,
 		.renderer = NULL
 	};
 
 	game.window = SDL_CreateWindow("breakoutc",
-		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
+		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+		WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
 	if (game.window == NULL) {
 		printf("Failed to create window: %s\n", SDL_GetError());
 		exit(1);
 	}
 
-	game.renderer = SDL_CreateRenderer(game.window, -1, SDL_RENDERER_ACCELERATED);
+	game.renderer = SDL_CreateRenderer(game.window, -1,
+		SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (game.renderer == NULL) {
 		printf("Failed to create renderer: %s\n", SDL_GetError());
 		exit(1);
@@ -36,10 +39,8 @@ int main(int argc, char* argv[])
 	scene_main(&game);
 	game_start(&game);
 
-	//Destroy window
+	SDL_DestroyRenderer(game.renderer);
 	SDL_DestroyWindow(game.window);
-
-	//Quit SDL subsystems
 	SDL_Quit();
 
 	return 0;

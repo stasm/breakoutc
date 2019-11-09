@@ -4,12 +4,25 @@ static int QUERY = HAS_TRANSFORM2D | HAS_CONTROL_PADDLE;
 
 void sys_control_paddle_update(Game* game, int entity, float delta)
 {
-	float direction[2] = { 1, 1 };
 	float speed = 300.0;
+	float x = 0;
+	float y = 0;
+
+	if (game->input_state[SDL_SCANCODE_LEFT])
+		x += -1;
+
+	if (game->input_state[SDL_SCANCODE_RIGHT])
+		x += 1;
+
+	if (game->input_state[SDL_SCANCODE_UP])
+		y += -1;
+
+	if (game->input_state[SDL_SCANCODE_DOWN])
+		y += 1;
 
 	Transform2D* transform = game->transform2d[entity];
-	transform->translation[0] += direction[0] * speed * delta;
-	transform->translation[1] += direction[1] * speed * delta;
+	transform->translation[0] += x * speed * delta;
+	transform->translation[1] += y * speed * delta;
 	transform->dirty = true;
 }
 

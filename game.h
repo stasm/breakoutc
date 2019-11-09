@@ -13,6 +13,9 @@ typedef struct Game {
 	int world[MAX_ENTITIES];
 	Transform2D* transform2d[MAX_ENTITIES];
 	Draw2D* draw2d[MAX_ENTITIES];
+
+	int input_state[SDL_NUM_SCANCODES];
+
 	clock_t last_time;
 	SDL_Window* window;
 	SDL_Renderer* renderer;

@@ -39,6 +39,14 @@ void game_start(Game* game)
 			case SDL_QUIT:
 				exit(0);
 				break;
+			case SDL_KEYDOWN:
+				if (event.key.repeat == 0)
+					game->input_state[event.key.keysym.scancode] = 1;
+				break;
+			case SDL_KEYUP:
+				if (event.key.repeat == 0)
+					game->input_state[event.key.keysym.scancode] = 0;
+				break;
 			default:
 				break;
 			}
@@ -48,7 +56,6 @@ void game_start(Game* game)
 		clock_t delta = current_time - game->last_time;
 		update(game, (float)delta / CLOCKS_PER_SEC);
 		game->last_time = current_time;
-		SDL_GL_SwapWindow(game->window);
-		//SDL_Delay(1);
 	}
 }
+
