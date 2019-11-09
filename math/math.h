@@ -1,6 +1,6 @@
 #pragma once
-#include "math_vec2.h"
 
+typedef float Vec2[2];
 typedef float Mat2D[6];
 
 void mat2d_create(float* matrix);

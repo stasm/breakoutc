@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <math.h>
-
-#include "math_mat2d.h"
+#include "math.h"
 
 void mat2d_create(float* out)
 {

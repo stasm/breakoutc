@@ -1,6 +1,6 @@
 #include <stdbool.h>
 #include "../game.h"
-#include "../math/math_mat2d.h"
+#include "../math/math.h"
 
 Transform2D* mix_transform2d(Game* game, int entity) {
 	Transform2D* transform = (Transform2D*)malloc(sizeof(Transform2D));
