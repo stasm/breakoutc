@@ -4,11 +4,11 @@ project(breakoutc)
 add_executable(breakoutc
 	game.c
 	main.c
-	math_mat2d.c
-	mix_transform2d.c
-	sys_draw2d.c
-	sys_framerate.c
-	sys_transform2d.c
+	math/math_mat2d.c
+	mixins/mix_transform2d.c
+	systems/sys_draw2d.c
+	systems/sys_framerate.c
+	systems/sys_transform2d.c
 )
 
 

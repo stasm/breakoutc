@@ -1,7 +1,7 @@
 #include <SDL2/SDL.h>
 
-#include "game.h"
-#include "com_index.h"
+#include "../game.h"
+#include "../components/com_index.h"
 #include "sys_draw2d.h"
 
 int QUERY = HasTransform2D | HasDraw2D;

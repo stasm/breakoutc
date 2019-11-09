@@ -1,6 +1,6 @@
 #include "sys_transform2d.h"
-#include "math_mat2d.h"
-#include "com_index.h"
+#include "../math/math_mat2d.h"
+#include "../components/com_index.h"
 
 int SYS_TRANSFORM_QUERY = HasTransform2D;
 

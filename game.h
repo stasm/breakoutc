@@ -3,7 +3,7 @@
 #include <SDL2/SDL.h>
 #include <time.h>
 
-#include "com_transform2d.h"
+#include "components/com_transform2d.h"
 
 #define MAX_ENTITIES 100
 

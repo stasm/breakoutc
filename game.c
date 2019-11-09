@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 #include "game.h"
-#include "sys_framerate.h"
-#include "sys_transform2d.h"
-#include "sys_draw2d.h"
+#include "systems/sys_framerate.h"
+#include "systems/sys_transform2d.h"
+#include "systems/sys_draw2d.h"
 
 int create_entity(Game* game)
 {
