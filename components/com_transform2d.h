@@ -1,5 +1,4 @@
 #pragma once
-
 #include <stdbool.h>
 
 typedef struct Transform2D {

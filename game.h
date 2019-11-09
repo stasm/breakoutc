@@ -9,7 +9,7 @@
 
 typedef struct Game {
 	int world[MAX_ENTITIES];
-	Transform2D* AllTransform2D[MAX_ENTITIES];
+	Transform2D* transform2d[MAX_ENTITIES];
 	clock_t last_time;
 	SDL_Window* window;
 	SDL_Renderer* renderer;

@@ -18,6 +18,6 @@ void create_transform2d(Game* game, int entity) {
 	mat2d_create(transform->world);
 	mat2d_create(transform->self);
 
-	game->world[entity] |= HasTransform2D;
-	game->AllTransform2D[entity] = transform;
+	game->world[entity] |= HAS_TRANSFORM2D;
+	game->transform2d[entity] = transform;
 }

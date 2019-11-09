@@ -4,7 +4,7 @@
 #include "../components/com_index.h"
 #include "sys_draw2d.h"
 
-int QUERY = HasTransform2D | HasDraw2D;
+int SYS_DRAW2D_QUERY = HAS_TRANSFORM2D;
 
 void sys_draw2d(Game* game, float delta)
 {

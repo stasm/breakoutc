@@ -2,11 +2,11 @@
 #include "../math/math_mat2d.h"
 #include "../components/com_index.h"
 
-int SYS_TRANSFORM_QUERY = HasTransform2D;
+int SYS_TRANSFORM_QUERY = HAS_TRANSFORM2D;
 
 void sys_transform_update(Game* game, int entity)
 {
-	Transform2D* transform = game->AllTransform2D[entity];
+	Transform2D* transform = game->transform2d[entity];
 	if (transform->dirty)
 	{
 		transform->dirty = false;

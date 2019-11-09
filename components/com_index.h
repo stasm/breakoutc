@@ -1,11 +1,11 @@
 #pragma once
 
 enum ComponentIndex {
-	GetDraw2D,
-	GetTransform2D,
+	DRAW2D,
+	TRANSFORM2D,
 };
 
 enum ComponentMask {
-	HasDraw2D = 1 << GetDraw2D,
-	HasTransform2D = 1 << GetTransform2D,
+	HAS_DRAW2D = 1 << DRAW2D,
+	HAS_TRANSFORM2D = 1 << TRANSFORM2D,
 };
