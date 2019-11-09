@@ -8,11 +8,11 @@ add_executable(breakoutc
 	mixins/mix_control_paddle.c
 	mixins/mix_draw2d.c
 	mixins/mix_transform2d.c
+	scenes/scn_main.c
 	systems/sys_control_paddle.c
 	systems/sys_draw2d.c
 	systems/sys_framerate.c
 	systems/sys_transform2d.c
-	worlds/wor_main.c
 )
 
 
