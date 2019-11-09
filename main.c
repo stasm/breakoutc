@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "game.h"
-#include "worlds/wor_main.h"
+#include "worlds/wor.h"
 
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
