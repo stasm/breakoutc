@@ -1,6 +1,7 @@
 #include "../game.h"
-#include "../mixins/mix_transform2d.h"
+#include "../mixins/mix_control_paddle.h"
 #include "../mixins/mix_draw2d.h"
+#include "../mixins/mix_transform2d.h"
 
 void world_main(Game* game)
 {
@@ -9,4 +10,5 @@ void world_main(Game* game)
 	transform->translation[0] = 100;
 	transform->translation[1] = 100;
 	Draw2D* draw = mix_draw2d(game, paddle);
+	mix_control_paddle(game, paddle);
 }

@@ -2,9 +2,10 @@
 #include <stdio.h>
 
 #include "game.h"
+#include "systems/sys_control_paddle.h"
+#include "systems/sys_draw2d.h"
 #include "systems/sys_framerate.h"
 #include "systems/sys_transform2d.h"
-#include "systems/sys_draw2d.h"
 
 int create_entity(Game* game)
 {
@@ -24,6 +25,7 @@ void destroy_entity(Game* game, int entity)
 
 void update(Game* game, float delta)
 {
+	sys_control_paddle(game, delta);
 	sys_transform2d(game, delta);
 	sys_draw2d(game, delta);
 	sys_framerate(game, delta);

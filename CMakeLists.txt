@@ -5,8 +5,10 @@ add_executable(breakoutc
 	game.c
 	main.c
 	math/math_mat2d.c
+	mixins/mix_control_paddle.c
 	mixins/mix_draw2d.c
 	mixins/mix_transform2d.c
+	systems/sys_control_paddle.c
 	systems/sys_draw2d.c
 	systems/sys_framerate.c
 	systems/sys_transform2d.c
