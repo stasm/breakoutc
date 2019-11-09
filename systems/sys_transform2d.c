@@ -2,7 +2,7 @@
 #include "../math/math_mat2d.h"
 #include "../components/com_index.h"
 
-int SYS_TRANSFORM_QUERY = HAS_TRANSFORM2D;
+static int QUERY = HAS_TRANSFORM2D;
 
 void sys_transform_update(Game* game, int entity)
 {
@@ -21,7 +21,7 @@ void sys_transform_update(Game* game, int entity)
 void sys_transform2d(Game* game, float delta)
 {
 	for (int i = 0; i < MAX_ENTITIES; i++) {
-		if ((game->world[i] & SYS_TRANSFORM_QUERY) == SYS_TRANSFORM_QUERY) {
+		if ((game->world[i] & QUERY) == QUERY) {
 			sys_transform_update(game, i);
 		}
 	}
