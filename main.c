@@ -12,6 +12,7 @@ void update(Game* game, float delta)
 	sys_control_ball(game, delta);
 	sys_move(game, delta);
 	sys_transform2d(game, delta);
+	sys_collide(game, delta);
 	sys_draw2d(game, delta);
 	sys_framerate(game, delta);
 }

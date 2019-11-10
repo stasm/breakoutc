@@ -8,6 +8,7 @@
 #include <math.h>
 
 #include "components/com_index.h"
+#include "components/com_collide.h"
 #include "components/com_control_ball.h"
 #include "components/com_draw2d.h"
 #include "components/com_move.h"
@@ -17,6 +18,7 @@
 
 typedef struct Game {
 	int world[MAX_ENTITIES];
+	Collide* collide[MAX_ENTITIES];
 	ControlBall* control_ball[MAX_ENTITIES];
 	Draw2D* draw2d[MAX_ENTITIES];
 	Move* move[MAX_ENTITIES];

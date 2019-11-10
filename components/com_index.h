@@ -1,6 +1,7 @@
 #pragma once
 
 enum ComponentIndex {
+	COLLIDE,
 	CONTROL_BALL,
 	CONTROL_PADDLE,
 	DRAW2D,
@@ -9,6 +10,7 @@ enum ComponentIndex {
 };
 
 enum ComponentMask {
+	HAS_COLLIDE = 1 << COLLIDE,
 	HAS_CONTROL_BALL = 1 << CONTROL_BALL,
 	HAS_CONTROL_PADDLE = 1 << CONTROL_PADDLE,
 	HAS_DRAW2D = 1 << DRAW2D,

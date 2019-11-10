@@ -21,6 +21,11 @@ void mat2d_from_translation(float* out, float* v) {
 	out[5] = v[1];
 }
 
+void mat2d_get_translation(float* out, float* a) {
+	out[0] = a[4];
+	out[1] = a[5];
+}
+
 void mat2d_rotate(float* out, float* a, float rad) {
 	float s = (float)sin(rad);
 	float c = (float)cos(rad);

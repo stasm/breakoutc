@@ -1,6 +1,6 @@
 #include "../game.h"
 
-static int QUERY = HAS_TRANSFORM2D | HAS_MOVE | HAS_CONTROL_BALL;
+static int QUERY = HAS_TRANSFORM2D | HAS_MOVE | HAS_CONTROL_BALL | HAS_COLLIDE;
 
 void sys_control_ball_update(Game* game, int entity)
 {
@@ -25,6 +25,18 @@ void sys_control_ball_update(Game* game, int entity)
 	if (transform->translation[1] > game->viewport_height) {
 		transform->translation[1] = game->viewport_height;
 		control->direction[1] *= -1;
+	}
+
+	Collide* collide = game->collide[entity];
+	if (collide->collision != NULL) {
+		if (collide->collision->hit[0]) {
+			transform->translation[0] += collide->collision->hit[0];
+			control->direction[0] *= -1;
+		}
+		if (collide->collision->hit[1]) {
+			transform->translation[1] += collide->collision->hit[1];
+			control->direction[1] *= -1;
+		}
 	}
 
 	Move* move = game->move[entity];
