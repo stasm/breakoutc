@@ -88,6 +88,8 @@ void scene_main(Game* game)
 			draw->color[1] = 0xFF;
 			draw->color[2] = 0x55;
 
+			mix_control_brick(game, entity);
+
 			Collide* collide = mix_collide(game, entity);
 			collide->size[0] = 100;
 			collide->size[1] = 20;

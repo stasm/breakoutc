@@ -10,6 +10,7 @@ void update(Game* game, float delta)
 {
 	sys_control_paddle(game, delta);
 	sys_control_ball(game, delta);
+	sys_control_brick(game, delta);
 	sys_move(game, delta);
 	sys_transform2d(game, delta);
 	sys_collide(game, delta);
