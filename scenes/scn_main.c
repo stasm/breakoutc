@@ -23,7 +23,7 @@ void scene_main(Game* game)
 		move->speed = 500;
 	}
 
-	{
+	for (int i = 0; i < 10; i++) {
 		// Ball
 		int entity = create_entity(game);
 		Transform2D* transform = mix_transform2d(game, entity);
