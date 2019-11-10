@@ -2,7 +2,7 @@
 
 static int QUERY = HAS_TRANSFORM2D | HAS_MOVE | HAS_CONTROL_BALL | HAS_COLLIDE;
 
-void sys_control_ball_update(Game* game, int entity)
+static void update(Game* game, int entity)
 {
 	Transform2D* transform = game->transform2d[entity];
 	ControlBall* control = game->control_ball[entity];
@@ -54,7 +54,7 @@ void sys_control_ball(Game* game, float delta)
 {
 	for (int i = 0; i < MAX_ENTITIES; i++) {
 		if ((game->world[i] & QUERY) == QUERY) {
-			sys_control_ball_update(game, i);
+			update(game, i);
 		}
 	}
 }

@@ -2,7 +2,7 @@
 
 static int QUERY = HAS_TRANSFORM2D | HAS_MOVE;
 
-void sys_move_update(Game* game, int entity, float delta)
+static void update(Game* game, int entity, float delta)
 {
 	Transform2D* transform = game->transform2d[entity];
 	Move* move = game->move[entity];
@@ -17,7 +17,7 @@ void sys_move(Game* game, float delta)
 {
 	for (int i = 0; i < MAX_ENTITIES; i++) {
 		if ((game->world[i] & QUERY) == QUERY) {
-			sys_move_update(game, i, delta);
+			update(game, i, delta);
 		}
 	}
 }

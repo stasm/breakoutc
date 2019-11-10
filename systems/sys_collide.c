@@ -2,7 +2,7 @@
 
 static int QUERY = HAS_TRANSFORM2D | HAS_COLLIDE;
 
-void compute_aabb(Transform2D* transform, Collide* collide)
+static void compute_aabb(Transform2D* transform, Collide* collide)
 {
 	mat2d_get_translation(collide->center, transform->world);
 	collide->min[0] = collide->center[0] - collide->size[0] / 2;
@@ -11,7 +11,7 @@ void compute_aabb(Transform2D* transform, Collide* collide)
 	collide->max[1] = collide->center[1] + collide->size[1] / 2;
 }
 
-void penetrate_aabb(float* hit, Collide* a, Collide* b) {
+static void penetrate_aabb(float* hit, Collide* a, Collide* b) {
 	float distance_x = a->center[0] - b->center[0];
 	float penetration_x = a->size[0] / 2 + b->size[0] / 2 - abs(distance_x);
 
@@ -28,7 +28,7 @@ void penetrate_aabb(float* hit, Collide* a, Collide* b) {
 	}
 }
 
-bool intersect_aabb(Collide* a, Collide* b) {
+static bool intersect_aabb(Collide* a, Collide* b) {
 	return a->min[0] < b->max[0]
 		&& a->max[0] > b->min[0]
 		&& a->min[1] < b->max[1]

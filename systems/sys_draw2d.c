@@ -3,7 +3,7 @@
 
 static int QUERY = HAS_TRANSFORM2D | HAS_DRAW2D;
 
-void draw_rect(Game* game, int entity) {
+static void draw_rect(Game* game, int entity) {
 	Transform2D* transform = game->transform2d[entity];
 	Draw2D* draw = game->draw2d[entity];
 	SDL_Rect rect = {
