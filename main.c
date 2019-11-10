@@ -6,9 +6,6 @@
 #include "systems/sys.h"
 #include "scenes/scn.h"
 
-const int WINDOW_WIDTH = 800;
-const int WINDOW_HEIGHT = 600;
-
 void update(Game* game, float delta)
 {
 	sys_control_paddle(game, delta);
@@ -31,12 +28,14 @@ int main(int argc, char* argv[])
 		.input_state = {0},
 		.clear_color = {0, 0, 0, 0xFF},
 		.window = NULL,
-		.renderer = NULL
+		.renderer = NULL,
+		.viewport_width = 800,
+		.viewport_height = 600,
 	};
 
 	game.window = SDL_CreateWindow("breakoutc",
 		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-		WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
+		game.viewport_width, game.viewport_height, SDL_WINDOW_SHOWN);
 	if (game.window == NULL) {
 		printf("Failed to create window: %s\n", SDL_GetError());
 		exit(1);

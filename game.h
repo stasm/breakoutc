@@ -28,6 +28,8 @@ typedef struct Game {
 	clock_t last_time;
 	SDL_Window* window;
 	SDL_Renderer* renderer;
+	int viewport_width;
+	int viewport_height;
 
 } Game;
 
