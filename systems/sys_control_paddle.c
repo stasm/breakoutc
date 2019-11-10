@@ -4,25 +4,14 @@ static int QUERY = HAS_MOVE | HAS_CONTROL_PADDLE;
 
 void sys_control_paddle_update(Game* game, int entity)
 {
-	float speed = 300.0;
-	float x = 0;
-	float y = 0;
+	Move* move = game->move[entity];
+	move->direction[0] = 0;
 
 	if (game->input_state[SDL_SCANCODE_LEFT])
-		x += -1;
+		move->direction[0] -= 1;
 
 	if (game->input_state[SDL_SCANCODE_RIGHT])
-		x += 1;
-
-	if (game->input_state[SDL_SCANCODE_UP])
-		y += -1;
-
-	if (game->input_state[SDL_SCANCODE_DOWN])
-		y += 1;
-
-	Move* move = game->move[entity];
-	move->direction[0] = x;
-	move->direction[1] = y;
+		move->direction[0] += 1;
 }
 
 void sys_control_paddle(Game* game, float delta)

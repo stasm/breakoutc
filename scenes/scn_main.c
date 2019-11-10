@@ -11,8 +11,8 @@ void scene_main(Game* game)
 		int entity = create_entity(game);
 
 		Transform2D* transform = mix_transform2d(game, entity);
-		transform->translation[0] = 100;
-		transform->translation[1] = 100;
+		transform->translation[0] = game->viewport_width / 2;
+		transform->translation[1] = game->viewport_height - 20;
 
 		Draw2D* draw = mix_draw2d(game, entity);
 		draw->width = 100;
@@ -25,15 +25,19 @@ void scene_main(Game* game)
 
 		Move* move = mix_move(game, entity);
 		move->speed = 500;
+
+		Collide* collide = mix_collide(game, entity);
+		collide->size[0] = 100;
+		collide->size[1] = 20;
 	}
 
-	for (int i = 0; i < 10; i++) {
+	{
 		// Ball
 		int entity = create_entity(game);
 
 		Transform2D* transform = mix_transform2d(game, entity);
-		transform->translation[0] = 300;
-		transform->translation[1] = 300;
+		transform->translation[0] = game->viewport_width / 2;
+		transform->translation[1] = game->viewport_height - 100;
 
 		Draw2D* draw = mix_draw2d(game, entity);
 		draw->width = 20;
@@ -48,7 +52,7 @@ void scene_main(Game* game)
 		control->direction[1] = sin(angle);
 
 		Move* move = mix_move(game, entity);
-		move->speed = 250;
+		move->speed = 300;
 
 		Collide* collide = mix_collide(game, entity);
 		collide->size[0] = 20;
