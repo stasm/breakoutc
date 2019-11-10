@@ -30,8 +30,8 @@ int main(int argc, char* argv[])
 		.clear_color = {0, 0, 0, 0xFF},
 		.window = NULL,
 		.renderer = NULL,
-		.viewport_width = 800,
-		.viewport_height = 600,
+		.viewport_width = 854,
+		.viewport_height = 480,
 	};
 
 	game.window = SDL_CreateWindow("breakoutc",
