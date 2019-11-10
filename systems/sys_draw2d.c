@@ -22,7 +22,7 @@ void draw_rect(Game* game, int entity) {
 
 void sys_draw2d(Game* game, float delta)
 {
-	SDL_SetRenderDrawColor(game->renderer, 255, 85, 85, 255);
+	SDL_SetRenderDrawColor(game->renderer, 0x00, 0x00, 0x00, 0xFF);
 	SDL_RenderClear(game->renderer);
 
 	for (int i = 0; i < MAX_ENTITIES; i++) {
