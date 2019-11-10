@@ -2,10 +2,20 @@
 #include <stdio.h>
 #include <time.h>
 #include "game.h"
+#include "systems/sys.h"
 #include "scenes/scn.h"
 
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
+
+void update(Game* game, float delta)
+{
+	sys_control_paddle(game, delta);
+	sys_control_ball(game, delta);
+	sys_transform2d(game, delta);
+	sys_draw2d(game, delta);
+	sys_framerate(game, delta);
+}
 
 int main(int argc, char* argv[])
 {
@@ -37,7 +47,7 @@ int main(int argc, char* argv[])
 	}
 
 	scene_main(&game);
-	game_start(&game);
+	game_start(&game, &update);
 
 	SDL_DestroyRenderer(game.renderer);
 	SDL_DestroyWindow(game.window);

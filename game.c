@@ -1,8 +1,5 @@
 #include <SDL2/SDL.h>
-#include <stdio.h>
-
 #include "game.h"
-#include "systems/sys.h"
 
 int create_entity(Game* game)
 {
@@ -20,16 +17,7 @@ void destroy_entity(Game* game, int entity)
 	game->world[entity] = 0;
 }
 
-void update(Game* game, float delta)
-{
-	sys_control_paddle(game, delta);
-	sys_control_ball(game, delta);
-	sys_transform2d(game, delta);
-	sys_draw2d(game, delta);
-	sys_framerate(game, delta);
-}
-
-void game_start(Game* game)
+void game_start(Game* game, void (*update)(Game*, float))
 {
 	game->last_time = clock() - 1;
 
@@ -38,8 +26,7 @@ void game_start(Game* game)
 		while (SDL_PollEvent(&event)) {
 			switch (event.type) {
 			case SDL_QUIT:
-				exit(0);
-				break;
+				return;
 			case SDL_KEYDOWN:
 				if (event.key.repeat == 0)
 					game->input_state[event.key.keysym.scancode] = 1;
@@ -55,7 +42,7 @@ void game_start(Game* game)
 
 		clock_t current_time = clock();
 		clock_t delta = current_time - game->last_time;
-		update(game, (float)delta / CLOCKS_PER_SEC);
+		(*update)(game, (float)delta / CLOCKS_PER_SEC);
 		game->last_time = current_time;
 	}
 }
