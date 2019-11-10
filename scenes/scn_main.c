@@ -3,6 +3,9 @@
 
 void scene_main(Game* game)
 {
+	srand(time(NULL));
+	(void)rand();
+
 	{
 		// Paddle
 		int entity = create_entity(game);
@@ -33,8 +36,9 @@ void scene_main(Game* game)
 		draw->color[1] = 0xFF;
 		draw->color[2] = 0x00;
 		ControlBall* control = mix_control_ball(game, entity);
-		control->direction[0] = cos(2);
-		control->direction[1] = sin(2);
+		float angle = -(float)rand() / RAND_MAX * M_PI;
+		control->direction[0] = cos(angle);
+		control->direction[1] = sin(angle);
 		Move* move = mix_move(game, entity);
 		move->speed = 250;
 	}

@@ -1,7 +1,11 @@
-#pragma once 
+#pragma once
+
+#define _USE_MATH_DEFINES
 
 #include <SDL2/SDL.h>
+#include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 #include "components/com_index.h"
 #include "components/com_control_ball.h"
