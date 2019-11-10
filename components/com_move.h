@@ -1,7 +1,7 @@
 #pragma once
 
 typedef struct Move {
-	float direction[2];
+	Vec2 direction;
 	float speed;
 } Move;
 

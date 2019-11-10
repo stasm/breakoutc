@@ -2,7 +2,7 @@
 #include <math.h>
 #include "math.h"
 
-void mat2d_create(float* out)
+void mat2d_create(Mat2D out)
 {
 	out[0] = 1;
 	out[1] = 0;
@@ -12,7 +12,8 @@ void mat2d_create(float* out)
 	out[5] = 0;
 }
 
-void mat2d_from_translation(float* out, float* v) {
+void mat2d_from_translation(Mat2D out, Vec2 v)
+{
 	out[0] = 1;
 	out[1] = 0;
 	out[2] = 0;
@@ -21,12 +22,14 @@ void mat2d_from_translation(float* out, float* v) {
 	out[5] = v[1];
 }
 
-void mat2d_get_translation(float* out, float* a) {
+void mat2d_get_translation(Mat2D out, Vec2 a)
+{
 	out[0] = a[4];
 	out[1] = a[5];
 }
 
-void mat2d_rotate(float* out, float* a, float rad) {
+void mat2d_rotate(Mat2D out, Mat2D a, float rad)
+{
 	float s = (float)sin(rad);
 	float c = (float)cos(rad);
 	out[0] = a[0] * c + a[2] * s;
@@ -37,7 +40,8 @@ void mat2d_rotate(float* out, float* a, float rad) {
 	out[5] = a[5];
 }
 
-void mat2d_scale(float* out, float* a, float* v) {
+void mat2d_scale(Mat2D out, Mat2D a, Vec2 v)
+{
 	out[0] = a[0] * v[0];
 	out[1] = a[1] * v[0];
 	out[2] = a[2] * v[1];
@@ -46,7 +50,8 @@ void mat2d_scale(float* out, float* a, float* v) {
 	out[5] = a[5];
 }
 
-void mat2d_invert(float* out, float* a) {
+void mat2d_invert(Mat2D out, Mat2D a)
+{
 	float aa = a[0];
 	float ab = a[1];
 	float ac = a[2];
@@ -68,7 +73,8 @@ void mat2d_invert(float* out, float* a) {
 	out[5] = (ab * atx - aa * aty) * det;
 }
 
-void mat2d_multiply(float* out, float* a, float* b) {
+void mat2d_multiply(Mat2D out, Mat2D a, Mat2D b)
+{
 	out[0] = a[0] * b[0] + a[2] * b[1];
 	out[1] = a[1] * b[0] + a[3] * b[1];
 	out[2] = a[0] * b[2] + a[2] * b[3];

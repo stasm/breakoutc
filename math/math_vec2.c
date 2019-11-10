@@ -2,7 +2,7 @@
 #include <math.h>
 #include "math.h"
 
-void vec2_normalize(float* out, float* a) {
+void vec2_normalize(Vec2 out, Vec2 a) {
 	float len = a[0] * a[0] + a[1] * a[1];
 	if (len > 0) {
 		len = 1 / sqrt(len);
