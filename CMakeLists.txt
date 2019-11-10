@@ -5,6 +5,7 @@ add_executable(breakoutc
 	game.c
 	main.c
 	math/math_mat2d.c
+	math/math_vec2.c
 	mixins/mix_collide.c
 	mixins/mix_control_ball.c
 	mixins/mix_control_paddle.c

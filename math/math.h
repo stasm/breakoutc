@@ -3,6 +3,8 @@
 typedef float Vec2[2];
 typedef float Mat2D[6];
 
+void vec2_normalize(float* out, float a);
+
 void mat2d_create(float* matrix);
 void mat2d_from_translation(float* out, float* v);
 void mat2d_get_translation(float* out, float* a);

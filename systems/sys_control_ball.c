@@ -37,6 +37,12 @@ void sys_control_ball_update(Game* game, int entity)
 			transform->translation[1] += collide->collision->hit[1];
 			control->direction[1] *= -1;
 		}
+		if (game->world[collide->collision->entity] & HAS_MOVE) {
+			Move* move = game->move[collide->collision->entity];
+			control->direction[0] += move->direction[0];
+			control->direction[1] += move->direction[1];
+			vec2_normalize(control->direction, control->direction);
+		}
 	}
 
 	Move* move = game->move[entity];
