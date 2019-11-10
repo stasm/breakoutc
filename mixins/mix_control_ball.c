@@ -1,6 +1,12 @@
 #include <stdbool.h>
 #include "../game.h"
 
-void mix_control_ball(Game* game, int entity) {
+ControlBall* mix_control_ball(Game* game, int entity) {
+	ControlBall* control = (ControlBall*)malloc(sizeof(ControlBall));
+	*control = (ControlBall){
+		.direction = {0, 0},
+	};
+
 	game->world[entity] |= HAS_CONTROL_BALL;
+	return game->control_ball[entity] = control;
 }

@@ -4,9 +4,10 @@ static int QUERY = HAS_MOVE | HAS_CONTROL_BALL;
 
 void sys_control_ball_update(Game* game, int entity)
 {
+	ControlBall* control = game->control_ball[entity];
 	Move* move = game->move[entity];
-	move->direction[0] = 1;
-	move->direction[1] = 1;
+	move->direction[0] = control->direction[0];
+	move->direction[1] = control->direction[1];
 }
 
 void sys_control_ball(Game* game, float delta)

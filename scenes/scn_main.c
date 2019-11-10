@@ -32,7 +32,9 @@ void scene_main(Game* game)
 		draw->color[0] = 0xFF;
 		draw->color[1] = 0xFF;
 		draw->color[2] = 0x00;
-		mix_control_ball(game, entity);
+		ControlBall* control = mix_control_ball(game, entity);
+		control->direction[0] = cos(2);
+		control->direction[1] = sin(2);
 		Move* move = mix_move(game, entity);
 		move->speed = 250;
 	}
