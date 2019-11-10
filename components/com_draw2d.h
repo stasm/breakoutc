@@ -1,6 +1,8 @@
 #pragma once
 
 typedef struct Draw2D {
-	float size;
+	float width;
+	float height;
+	int color[4];
 } Draw2D;
 

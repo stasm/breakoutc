@@ -7,12 +7,16 @@ void draw_rect(Game* game, int entity) {
 	Transform2D* transform = game->transform2d[entity];
 	Draw2D* draw = game->draw2d[entity];
 	SDL_Rect rect = {
-		.x = transform->translation[0] - draw->size / 2,
-		.y = transform->translation[1] - draw->size / 2,
-		.w = draw->size,
-		.h = draw->size,
+		.x = transform->translation[0] - draw->width / 2,
+		.y = transform->translation[1] - draw->height / 2,
+		.w = draw->width,
+		.h = draw->height,
 	};
-	SDL_SetRenderDrawColor(game->renderer, 0xFF, 0xFF, 0x55, 0xFF);
+	SDL_SetRenderDrawColor(game->renderer,
+		draw->color[0],
+		draw->color[1],
+		draw->color[2],
+		draw->color[3]);
 	SDL_RenderFillRect(game->renderer, &rect);
 }
 
