@@ -1,5 +1,4 @@
 #include "../game.h"
-#include "../math/math.h"
 
 static int QUERY = HAS_TRANSFORM2D | HAS_COLLIDE;
 

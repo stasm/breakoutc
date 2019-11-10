@@ -7,6 +7,7 @@
 #include <time.h>
 #include <math.h>
 
+#include "math/math.h"
 #include "components/com_index.h"
 #include "components/com_collide.h"
 #include "components/com_control_ball.h"
