@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <math.h>
 #include "math.h"
 
 void mat2d_create(Mat2D out)

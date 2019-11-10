@@ -3,9 +3,7 @@
 #define _USE_MATH_DEFINES
 
 #include <SDL2/SDL.h>
-#include <stdlib.h>
 #include <time.h>
-#include <math.h>
 
 #include "math/math.h"
 #include "components/com_index.h"

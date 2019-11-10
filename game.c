@@ -1,4 +1,3 @@
-#include <SDL2/SDL.h>
 #include "game.h"
 
 int create_entity(Game* game)

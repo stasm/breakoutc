@@ -1,5 +1,6 @@
 #pragma once
 #include <stdbool.h>
+#include <math.h>
 
 typedef float Vec2[2];
 typedef float Mat2D[6];

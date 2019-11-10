@@ -1,7 +1,4 @@
-#include <SDL2/SDL.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 #include "game.h"
 #include "systems/sys.h"
 #include "scenes/scn.h"
