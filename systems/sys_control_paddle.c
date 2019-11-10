@@ -1,8 +1,8 @@
 #include "../game.h"
 
-static int QUERY = HAS_TRANSFORM2D | HAS_CONTROL_PADDLE;
+static int QUERY = HAS_MOVE | HAS_CONTROL_PADDLE;
 
-void sys_control_paddle_update(Game* game, int entity, float delta)
+void sys_control_paddle_update(Game* game, int entity)
 {
 	float speed = 300.0;
 	float x = 0;
@@ -20,17 +20,16 @@ void sys_control_paddle_update(Game* game, int entity, float delta)
 	if (game->input_state[SDL_SCANCODE_DOWN])
 		y += 1;
 
-	Transform2D* transform = game->transform2d[entity];
-	transform->translation[0] += x * speed * delta;
-	transform->translation[1] += y * speed * delta;
-	transform->dirty = true;
+	Move* move = game->move[entity];
+	move->direction[0] = x;
+	move->direction[1] = y;
 }
 
 void sys_control_paddle(Game* game, float delta)
 {
 	for (int i = 0; i < MAX_ENTITIES; i++) {
 		if ((game->world[i] & QUERY) == QUERY) {
-			sys_control_paddle_update(game, i, delta);
+			sys_control_paddle_update(game, i);
 		}
 	}
 }

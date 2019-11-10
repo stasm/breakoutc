@@ -16,6 +16,7 @@ void scene_main(Game* game)
 		draw->color[1] = 0x00;
 		draw->color[2] = 0x00;
 		mix_control_paddle(game, entity);
+		mix_move(game, entity);
 	}
 
 	{
@@ -31,5 +32,6 @@ void scene_main(Game* game)
 		draw->color[1] = 0xFF;
 		draw->color[2] = 0x00;
 		mix_control_ball(game, entity);
+		mix_move(game, entity);
 	}
 }
