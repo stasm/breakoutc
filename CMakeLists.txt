@@ -44,13 +44,6 @@ elseif(APPLE)
 		${SDL2_LIBRARY}
 	)
 elseif(UNIX)
-	find_package(OpenGL REQUIRED)
-	find_package(GLEW REQUIRED)
 	find_package(SDL2 CONFIG REQUIRED)
-	target_link_libraries(breakoutc
-		m
-		${OPENGL_LIBRARIES}
-		${GLEW_LIBRARIES}
-		${SDL2_LIBRARIES}
-	)
+	target_link_libraries(breakoutc m ${SDL2_LIBRARIES})
 endif()

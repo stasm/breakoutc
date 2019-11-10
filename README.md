@@ -7,10 +7,12 @@ https://github.com/piesku/breakout/tree/tutorial.
 
 ## Windows
 
-Open the repo in Visual Studio 2019 using the _Open a local folder_ option.
+Install SDL2 and GLEW using `vcpkg`. Open the repo in Visual Studio 2019 using
+the _Open a local folder_ option.
 
 ## Linux
 
+    $ sudo apt install libsdl2-dev
     $ mkdir out
     $ cd out
     $ cmake ..
