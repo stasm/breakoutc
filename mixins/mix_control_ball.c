@@ -2,7 +2,7 @@
 #include "../game.h"
 
 ControlBall* mix_control_ball(Game* game, int entity) {
-	ControlBall* control = (ControlBall*)malloc(sizeof(ControlBall));
+	ControlBall* control = malloc(sizeof(ControlBall));
 	*control = (ControlBall){
 		.direction = {0, 0},
 	};

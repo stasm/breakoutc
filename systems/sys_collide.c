@@ -59,7 +59,7 @@ void sys_collide(Game* game, float delta)
 		for (int j = 0; j < all_colliders_count; j++) {
 			Collide* other = all_colliders[j];
 			if (collider->entity != other->entity && intersect_aabb(collider, other)) {
-				collider->collision = (Collision*)malloc(sizeof(Collision));
+				collider->collision = malloc(sizeof(Collision));
 				collider->collision->entity = other->entity;
 				penetrate_aabb(collider->collision->hit, collider, other);
 			}

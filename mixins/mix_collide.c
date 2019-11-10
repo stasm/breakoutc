@@ -2,7 +2,7 @@
 #include "../game.h"
 
 Collide* mix_collide(Game* game, int entity) {
-	Collide* collide = (Collide*)malloc(sizeof(Collide));
+	Collide* collide = malloc(sizeof(Collide));
 	*collide = (Collide){
 		.entity = entity,
 		.size = {0, 0},
