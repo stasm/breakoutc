@@ -27,6 +27,7 @@ int main(int argc, char* argv[])
 	Game game = (Game){
 		.world = {0},
 		.input_state = {0},
+		.clear_color = {0, 0, 0, 0xFF},
 		.window = NULL,
 		.renderer = NULL
 	};

@@ -15,6 +15,7 @@ typedef struct Game {
 	Draw2D* draw2d[MAX_ENTITIES];
 
 	int input_state[SDL_NUM_SCANCODES];
+	int clear_color[4];
 
 	clock_t last_time;
 	SDL_Window* window;
