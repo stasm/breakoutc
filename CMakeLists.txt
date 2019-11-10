@@ -36,10 +36,12 @@ if(MSVC)
 	)
 elseif(APPLE)
 	find_package(OpenGL REQUIRED)
-	find_package(SDL2 CONFIG REQUIRED)
+	find_library(SDL2_LIBRARY SDL2 "/Library/Frameworks")
+	find_library(SDL2_App PRIVATE ${SDL2_LIBRARY})
+	target_include_directories(breakoutc PRIVATE ${SDL2_INCLUDE_DIR})
 	target_link_libraries(breakoutc
-		OpenGL::GL
-		SDL2::SDL2 SDL2::SDL2main
+		${OPENGL_LIBRARIES}
+		${SDL2_LIBRARY}
 	)
 elseif(UNIX)
 	find_package(OpenGL REQUIRED)

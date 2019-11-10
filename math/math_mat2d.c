@@ -56,7 +56,7 @@ void mat2d_invert(float* out, float* a) {
 
 	float det = aa * ad - ab * ac;
 	if (!det) {
-		return NULL;
+		abort();
 	}
 	det = 1.0 / det;
 
