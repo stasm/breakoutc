@@ -1,10 +1,10 @@
 #pragma once
 #include "../game.h"
 
-Collide* mix_collide(Game*, int);
-ControlBall* mix_control_ball(Game*, int);
-void mix_control_brick(Game*, int);
-void mix_control_paddle(Game*, int);
-Draw2D* mix_draw2d(Game*, int);
-Move* mix_move(Game*, int);
-Transform2D* mix_transform2d(Game*, int);
+Collide* mix_collide(Game* game, int entity);
+ControlBall* mix_control_ball(Game* game, int entity);
+void mix_control_brick(Game* game, int entity);
+void mix_control_paddle(Game* game, int entity);
+Draw2D* mix_draw2d(Game* game, int entity);
+Move* mix_move(Game* game, int entity);
+Transform2D* mix_transform2d(Game* game, int entity);

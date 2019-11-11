@@ -34,7 +34,7 @@ typedef struct Game {
 
 } Game;
 
-void* xmalloc(size_t);
-int create_entity(Game*);
-void destroy_entity(Game*, int);
-void game_start(Game*, void (*)(Game*, float));
+void* xmalloc(size_t size);
+int create_entity(Game* game);
+void destroy_entity(Game* game, int entity);
+void game_start(Game* game, void (*update)(Game*, float));
