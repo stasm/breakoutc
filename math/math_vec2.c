@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <math.h>
 #include "math.h"
 
 void vec2_normalize(Vec2 out, Vec2 a) {
