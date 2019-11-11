@@ -11,17 +11,17 @@ void mat2d_create(Mat2D out)
 	out[5] = 0;
 }
 
-void mat2d_from_translation(Mat2D out, Vec2 v)
+void mat2d_from_translation(Mat2D out, Vec2 t)
 {
 	out[0] = 1;
 	out[1] = 0;
 	out[2] = 0;
 	out[3] = 1;
-	out[4] = v[0];
-	out[5] = v[1];
+	out[4] = t[0];
+	out[5] = t[1];
 }
 
-void mat2d_get_translation(Mat2D out, Vec2 a)
+void mat2d_get_translation(Vec2 out, Mat2D a)
 {
 	out[0] = a[4];
 	out[1] = a[5];
