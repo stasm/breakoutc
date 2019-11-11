@@ -1,8 +1,7 @@
-#include <stdbool.h>
 #include "../game.h"
 
 Collide* mix_collide(Game* game, int entity) {
-	Collide* collide = malloc(sizeof(Collide));
+	Collide* collide = xmalloc(sizeof(Collide));
 	*collide = (Collide){
 		.entity = entity,
 		.size = {0, 0},

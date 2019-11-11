@@ -1,8 +1,7 @@
-#include <stdbool.h>
 #include "../game.h"
 
 Draw2D* mix_draw2d(Game* game, int entity) {
-	Draw2D* draw = malloc(sizeof(Draw2D));
+	Draw2D* draw = xmalloc(sizeof(Draw2D));
 	*draw = (Draw2D){
 		.width = 100,
 		.height = 100,

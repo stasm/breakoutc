@@ -34,6 +34,7 @@ typedef struct Game {
 
 } Game;
 
+void* xmalloc(size_t);
 int create_entity(Game*);
 void destroy_entity(Game*, int);
 void game_start(Game*, void (*)(Game*, float));

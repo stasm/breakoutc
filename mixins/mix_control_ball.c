@@ -1,8 +1,7 @@
-#include <stdbool.h>
 #include "../game.h"
 
 ControlBall* mix_control_ball(Game* game, int entity) {
-	ControlBall* control = malloc(sizeof(ControlBall));
+	ControlBall* control = xmalloc(sizeof(ControlBall));
 	*control = (ControlBall){
 		.direction = {0, 0},
 	};

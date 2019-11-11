@@ -1,8 +1,7 @@
-#include <stdbool.h>
 #include "../game.h"
 
 Transform2D* mix_transform2d(Game* game, int entity) {
-	Transform2D* transform = malloc(sizeof(Transform2D));
+	Transform2D* transform = xmalloc(sizeof(Transform2D));
 	*transform = (Transform2D){
 		.world = {0},
 		.self = {0},
