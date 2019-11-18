@@ -7,7 +7,7 @@ void scene_main(Game* game)
 	srand(time(NULL));
 	(void)rand();
 
-	glClearColor(0, 0.7, 0.7, 1);
+	glClearColor(0, 0, 0, 1);
 
 	{
 		// 3D camera
@@ -22,6 +22,7 @@ void scene_main(Game* game)
 		Transform2D* transform = mix_transform2d(game, entity);
 		transform->translation[0] = game->viewport_width / 2;
 		transform->translation[1] = game->viewport_height - 20;
+		transform->scale[0] = 5.f;
 
 		Draw2D* draw = mix_draw2d(game, entity);
 		draw->width = 100;
@@ -31,9 +32,9 @@ void scene_main(Game* game)
 		draw->color[2] = 0x00;
 
 		Render* render = mix_render_basic(game, entity, &Cube);
-		render->layout.basic.color[0] = 1.0f;
-		render->layout.basic.color[1] = 1.0;
-		render->layout.basic.color[2] = 00;
+		render->layout.basic.color[0] = 1.f;
+		render->layout.basic.color[1] = 0.f;
+		render->layout.basic.color[2] = 0.f;
 
 		mix_control_paddle(game, entity);
 
@@ -60,6 +61,11 @@ void scene_main(Game* game)
 		draw->color[1] = 0xFF;
 		draw->color[2] = 0x00;
 
+		Render* render = mix_render_basic(game, entity, &Cube);
+		render->layout.basic.color[0] = 1.f;
+		render->layout.basic.color[1] = 1.f;
+		render->layout.basic.color[2] = 0.f;
+
 		ControlBall* control = mix_control_ball(game, entity);
 		float angle = -(float)rand() / RAND_MAX * M_PI;
 		control->direction[0] = cos(angle);
@@ -75,8 +81,8 @@ void scene_main(Game* game)
 
 	int col_count = 5;
 	int row_count = 5;
-	int brick_width = 100;
-	int brick_height = 20;
+	int brick_width = 220;
+	int brick_height = 30;
 	int padding = 10;
 
 	int brick_grid_width = brick_width * col_count + padding * (col_count - 1);
@@ -94,6 +100,7 @@ void scene_main(Game* game)
 			Transform2D* transform = mix_transform2d(game, entity);
 			transform->translation[0] = x;
 			transform->translation[1] = y;
+			transform->scale[0] = 5.f;
 
 			Draw2D* draw = mix_draw2d(game, entity);
 			draw->width = 100;
@@ -101,6 +108,11 @@ void scene_main(Game* game)
 			draw->color[0] = 0x00;
 			draw->color[1] = 0xFF;
 			draw->color[2] = 0x55;
+
+			Render* render = mix_render_basic(game, entity, &Cube);
+			render->layout.basic.color[0] = 0.0f;
+			render->layout.basic.color[1] = 1.0f;
+			render->layout.basic.color[2] = 0.3f;
 
 			mix_control_brick(game, entity);
 
