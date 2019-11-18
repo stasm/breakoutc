@@ -1,10 +1,19 @@
 #include "../game.h"
 #include "../mixins/mix.h"
+#include "../meshes/mesh.h"
 
 void scene_main(Game* game)
 {
 	srand(time(NULL));
 	(void)rand();
+
+	glClearColor(0, 0.7, 0.7, 1);
+
+	{
+		// 3D camera
+		int entity = create_entity(game);
+		mix_camera(game, entity);
+	}
 
 	{
 		// Paddle
@@ -20,6 +29,11 @@ void scene_main(Game* game)
 		draw->color[0] = 0xFF;
 		draw->color[1] = 0x00;
 		draw->color[2] = 0x00;
+
+		Render* render = mix_render_basic(game, entity, &Cube);
+		render->layout.basic.color[0] = 1.0f;
+		render->layout.basic.color[1] = 1.0;
+		render->layout.basic.color[2] = 00;
 
 		mix_control_paddle(game, entity);
 
